@@ -12,9 +12,8 @@ const Icons = () => {
     const [showLight, setShowLightIcon] = useState(true);
     const [showThin, setShowThinIcon] = useState(true);
     const [showDuotone, setShowDuotoneIcon] = useState(true);
-    const { category, sortMethod, iconsDisplayMethod, searchedText, setClickedIcon } = useContext(MenuContext)
+    const { category, setCategory, sortMethod, iconsDisplayMethod, searchedText, setClickedIcon } = useContext(MenuContext)
     const [filteredIcon, setFilteredIcon] = useState(iconsData);
-console.log(searchedText);
     const handleIconClik = (icon) => {
         setClickedIcon(icon)
         document.getElementById('my_modal_2').showModal()
@@ -34,11 +33,11 @@ console.log(searchedText);
             });
             return setFilteredIcon(sortedIcons)
         }
-        setFilteredIcon(filteredIcons.filter((icon)=>icon.name.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase() || "")));
+        setFilteredIcon(filteredIcons.filter((icon) => icon.name.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase() || "")));
     }, [category, sortMethod, searchedText])
 
     return (
-        <div className="bg-[#f0f1f3] min-h-[100vh]">
+        <div className="bg-[#f0f1f3] min-h-[100vh] py-10">
             <div className="lg:flex w-[90%] mx-auto">
                 <div className="hidden lg:block">
                     <h3 className="font-bold text-xs text-[#7c6f8a]  pt-[16px]">STYLE</h3>
@@ -76,12 +75,19 @@ console.log(searchedText);
                     </div>
                 </div>
                 <div>
-
-                    <h3 className="font-bold lg:text-xl text-lg px-[16px] pt-[16px]">{filteredIcon.length} Icons</h3>
+                    <div className="flex items-center gap-10 mb-6">
+                        <h3 className="font-bold lg:text-2xl text-lg">{filteredIcon.length} Icons</h3>
+                        {
+                             /[a-zA-Z]/g.test(category) && <div className="flex">
+                                {category.split(" ").map((icon, index)=> /[a-zA-Z]/g.test(icon) && <div key={index} className="px-4 py-2 bg-white text-xs font-bold mx-2 rounded-full flex gap-4 items-center"> <span className="hover:text-blue-600">{icon.toUpperCase()}</span> <span onClick={()=>setCategory(category.replace(icon,""))} className="text-[10px] hover:text-red-600 cursor-pointer font-light ">x</span></div>)}
+                                <button onClick={() => setCategory("")} className="hover:text-blue-600 hover:border-blue-600 py-1 px-2 font-bold rounded-full text-xs border border-gray-500">RESET</button>
+                            </div>
+                        }
+                    </div>
                     <div className={` flex flex-wrap gap-4 px-[16px] py-[16px] `} >
-                        {filteredIcon.map((iconInfo, index) => <div onClick={() => handleIconClik(iconInfo)} className={`relative ${iconsDisplayMethod === "list" && "flex-row p-2 w-32 h-12"} ${iconsDisplayMethod === "compact" && "p-8 w-32 h-32 flex-col"} ${iconsDisplayMethod === "roomy" && "lg:w-40 lg:h-40 w-36 h-36 p-10 flex-col"} cursor-pointer duration-300  flex items-center gap-2 rounded bg-white hover:bg-[#ffd43b]`} key={index}>
+                        {filteredIcon.map((iconInfo, index) => <div onClick={() => handleIconClik(iconInfo)} className={`relative ${iconsDisplayMethod === "list" && "flex-row p-2 w-48 h-12"} ${iconsDisplayMethod === "compact" && "p-8 w-32 h-32 flex-col"} ${iconsDisplayMethod === "roomy" && "lg:w-40 lg:h-40 w-36 h-36 p-10 flex-col"} cursor-pointer duration-300  flex items-center gap-2 rounded bg-white hover:bg-[#ffd43b]`} key={index}>
                             <GetIconByName name={iconInfo.name} />
-                            {iconInfo.type ==="pro" && <span className={`px-2 ${ iconsDisplayMethod ==="list" ? "right-4" :""} -top-2 text-[10px] absolute  font-semibold text-center rounded-xl bg-[#ffd43b] `}>PRO</span> }
+                            {iconInfo.type === "pro" && <span className={`px-[12px] py-[2px] ${iconsDisplayMethod === "list" ? "right-4" : ""} -top-2 lg:text-[10px] text-[10px] absolute font-semibold lg:font-bold text-center rounded-lg bg-[#ffd43b] `}>PRO</span>}
                             <span className="text-sm">{iconInfo.name.replace("Fa", "")}</span>
                         </div>)}
                     </div>
