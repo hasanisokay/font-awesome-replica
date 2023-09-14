@@ -21,7 +21,7 @@ export const iconsData = [
     { name: "FaCode", category: "classic free solid regular", type: "free", },
     { name: "FaFacebookF", category: "classic sharp brands free regular", type: "free",  },
     { name: "FaLinkedinIn", category: "classic sharp brands free regular", type: "free", },
-    { name: "FaGoogle", category: "classic brands free", type: "free", },
+    { name: "FaGoogle", category: "classic brands free regular", type: "free", },
     { name: "FaInstagram", category: "classic brands pro regular light thin duotone", type: "pro", },
     { name: "FaAirbnb", category: "classic brands pro regular light thin duotone", type: "pro", },
 ];

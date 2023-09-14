@@ -3,15 +3,17 @@ import { FaFontAwesomeFlag, FaIcons } from 'react-icons/fa';
 import { BsFillGrid3X3GapFill, BsFillGridFill } from "react-icons/bs";
 import { useContext } from 'react';
 import { MenuContext } from '../provider/Context';
+import filter from "../assets/bars-filter.svg"
 
 const Categories = () => {
-    const { setSortMethod, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod } = useContext(MenuContext);
+
+    const { setSortMethod, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod, showFilter, setShowFilter } = useContext(MenuContext);
     return (
-        <div className='flex items-center lg:gap-0 gap-2  lg:flex-row flex-col justify-around lg:w-[75%] w-[90%] mx-auto'>
+        <div className='flex items-center lg:gap-0 gap-2  lg:flex-row flex-col-reverse justify-around lg:w-[75%] w-[90%] mx-auto'>
             <div className='flex items-center gap-10 pt-8'>
                 <div onClick={() => setCategory(category.includes("classic") ? category.replace("classic", "") : category + " classic")} className={`${category.includes("classic") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaIcons className='h-8 w-8 mb-2' />
-                    <span>Sharp</span>
+                    <span>Classic</span>
                 </div>
                 <div onClick={() => setCategory(category.includes("sharp") ? category.replace("sharp", "") : category + " sharp")} className={`${category.includes("sharp") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaIcons className='h-8 w-8 mb-2' />
@@ -27,6 +29,9 @@ const Categories = () => {
                 </div>
             </div>
             <div className='flex items-center gap-4'>
+                <div onClick={() => setShowFilter(!showFilter)} className={`text-blue-600 flex gap-2 items-center rounded-lg border-2 p-3 cursor-pointer lg:hidden`}>
+                    <img src={filter} className={`w-4 h-4 ${showFilter ? 'transform rotate-180' : ''}`} alt="filter-icon" /> <p className='font-semibold'> {showFilter ? "Close" : "Show"} Filters</p>
+                </div>
                 <div className='flex gap-4'>
                     <BsFillGridFill onClick={() => setIconsDisplayMethod("roomy")} className={`w-4 h-4 cursor-pointer hover:text-blue-600  ${iconsDisplayMethod === "roomy" && "text-blue-600"}`} />
                     <BsFillGrid3X3GapFill onClick={() => setIconsDisplayMethod("compact")} className={`hover:text-blue-600 w-4 h-4 cursor-pointer ${iconsDisplayMethod === "compact" && "text-blue-600"}`} />

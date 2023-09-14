@@ -6,7 +6,7 @@ import { MenuContext } from '../provider/Context';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
-    const {searchedText, setSearchedText, filteredIcon} = useContext(MenuContext)
+    const { searchedText, setSearchedText, filteredIcon } = useContext(MenuContext)
 
     const navItems = <>
         <li className='hover:text-blue-600'><a href='#'>Start</a></li>
@@ -19,7 +19,7 @@ const Navbar = () => {
     </>
     return (
         <>
-            <div className='py-6 flex justify-around'>
+            <div className='py-6 flex justify-around w-[90%] mx-auto'>
                 <div className='lg:flex hidden gap-24 items-center'>
                     <a href="#"><img src={logo} alt="logo" className='w-8 h-8' /></a>
                     <ul className='flex text-lg text-[#667891] gap-14 items-center'>
@@ -40,9 +40,9 @@ const Navbar = () => {
                     </ul>
                 </div>
             }
-            <form className=" my-4 mx-auto w-[60%] relative">
-                <FaSearch className='inline text-gray-500 absolute top-[18px] left-4' />
-                <input value={searchedText} onChange={(e)=>setSearchedText(e.target.value)} name='searchField' type="text" placeholder={`Search ${filteredIcon.length} icons...`} className="pl-10 input focus:border-blue-600 border-black border-2 rounded-full focus:border--400 min-h-14 w-full" />
+            <form onSubmit={()=>setSearchedText(searchedText)} className="mt-8 lg:mb-4 mb-8 mx-auto w-[60%] relative">
+                <FaSearch className='inline text-gray-700 absolute w-6 h-6 top-[23px] left-6' />
+                <input value={searchedText} onChange={(e) => setSearchedText(e.target.value)} name='searchField' type="text" placeholder={`Search ${filteredIcon.length} icons...`} className="pl-14 font-semibold py-8 input focus:border-blue-600 border-black border-2 rounded-full focus:border--400 min-h-14 w-full" />
             </form>
         </>
     );
