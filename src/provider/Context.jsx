@@ -10,8 +10,9 @@ const Context = ({children}) => {
     const [clickedIcon, setClickedIcon] = useState({})
     const [searchedText, setSearchedText] = useState("")
     const [filteredIcon, setFilteredIcon] = useState(iconsData);
+    const [selectedStyle, setSelectedStyle] = useState("")
     const menuInfo ={
-        sortMethod, setSortMethod, filteredIcon, setFilteredIcon, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod, clickedIcon, setClickedIcon, setSearchedText, searchedText
+        sortMethod, setSortMethod, filteredIcon, setFilteredIcon, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod, clickedIcon, setClickedIcon, setSearchedText, searchedText, selectedStyle, setSelectedStyle,
     }
     return (
         <MenuContext.Provider value={menuInfo}>
