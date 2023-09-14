@@ -12,8 +12,7 @@ const Icons = () => {
     const [showLight, setShowLightIcon] = useState(true);
     const [showThin, setShowThinIcon] = useState(true);
     const [showDuotone, setShowDuotoneIcon] = useState(true);
-    const { category, setCategory, sortMethod, iconsDisplayMethod, searchedText, setClickedIcon } = useContext(MenuContext)
-    const [filteredIcon, setFilteredIcon] = useState(iconsData);
+    const { category, setCategory, sortMethod, filteredIcon, setFilteredIcon, iconsDisplayMethod, searchedText, setClickedIcon } = useContext(MenuContext);
     const handleIconClik = (icon) => {
         setClickedIcon(icon)
         document.getElementById('my_modal_2').showModal()

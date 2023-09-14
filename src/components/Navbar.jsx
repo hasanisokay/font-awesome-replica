@@ -6,7 +6,7 @@ import { MenuContext } from '../provider/Context';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
-    const {searchedText, setSearchedText} = useContext(MenuContext)
+    const {searchedText, setSearchedText, filteredIcon} = useContext(MenuContext)
 
     const navItems = <>
         <li className='hover:text-blue-600'><a href='#'>Start</a></li>
@@ -42,7 +42,7 @@ const Navbar = () => {
             }
             <form className=" my-4 mx-auto w-[70%] relative">
                 <FaSearch className='inline text-gray-500 absolute top-[18px] left-4' />
-                <input value={searchedText} onChange={(e)=>setSearchedText(e.target.value)} name='searchField' type="text" placeholder={"Search 24 icons..."} className="pl-10 input focus:border-blue-600 border-black border-2 rounded-full focus:border--400 min-h-14 w-full" />
+                <input value={searchedText} onChange={(e)=>setSearchedText(e.target.value)} name='searchField' type="text" placeholder={`Search ${filteredIcon.length} icons...`} className="pl-10 input focus:border-blue-600 border-black border-2 rounded-full focus:border--400 min-h-14 w-full" />
             </form>
         </>
     );

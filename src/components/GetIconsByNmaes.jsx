@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FaHome, FaHourglass, FaInstagram, FaLinkedinIn, FaUserAlt, FaFacebookF, FaGoogle, FaVideo, FaEnvelope, FaCamera, FaMusic, FaFilm, FaShoppingCart, FaCar, FaStar, FaHeart, FaGamepad, FaGlobe, FaSun, FaMoon, FaBook, FaBriefcase, FaCoffee, FaCode } from "react-icons/fa";
+import { FaHome, FaHourglass, FaInstagram, FaLinkedinIn, FaAirbnb, FaUserAlt, FaFacebookF, FaGoogle, FaVideo, FaEnvelope, FaCamera, FaMusic, FaFilm, FaShoppingCart, FaCar, FaStar, FaHeart, FaGamepad, FaGlobe, FaSun, FaMoon, FaBook, FaBriefcase, FaCoffee, FaCode } from "react-icons/fa";
 import { MenuContext } from "../provider/Context";
 
 const GetIconByName = ({ name, fromModal }) => {
@@ -52,6 +52,8 @@ const GetIconByName = ({ name, fromModal }) => {
       return <FaFacebookF className={classes} />;
     case "FaCode":
       return <FaCode className={classes} />;
+    case "FaAirbnb":
+      return <FaAirbnb className={classes} />;
     case "FaInstagram":
       return <FaInstagram className={classes} />;
     default:

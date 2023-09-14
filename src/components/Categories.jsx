@@ -9,19 +9,19 @@ const Categories = () => {
     return (
         <div className='flex items-center lg:gap-0 gap-2  lg:flex-row flex-col justify-around lg:w-[75%] w-[90%] mx-auto'>
             <div className='flex items-center gap-10 pt-8'>
-                <div onClick={() => setCategory(category.includes("classic") ? category.replace("classic", "") : category + " classic")} className={`${category.includes("classic") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 flex flex-col items-center lg:w-24 w-16 h-20`}>
+                <div onClick={() => setCategory(category.includes("classic") ? category.replace("classic", "") : category + " classic")} className={`${category.includes("classic") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaIcons className='h-8 w-8 mb-2' />
                     <span>Sharp</span>
                 </div>
-                <div onClick={() => setCategory(category.includes("sharp") ? category.replace("sharp", "") : category + " sharp")} className={`${category.includes("sharp") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 flex flex-col items-center lg:w-24 w-16 h-20`}>
+                <div onClick={() => setCategory(category.includes("sharp") ? category.replace("sharp", "") : category + " sharp")} className={`${category.includes("sharp") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaIcons className='h-8 w-8 mb-2' />
                     <span>Sharp</span>
                 </div>
-                <div onClick={() => setCategory(category.includes("brands") ? category.replace("brands", "") : category + " brands")} className={`${category.includes("brands") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 flex flex-col items-center lg:w-24 w-16 h-20`}>
+                <div onClick={() => setCategory(category.includes("brands") ? category.replace("brands", "") : category + " brands")} className={`${category.includes("brands") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaFontAwesomeFlag className='h-8 w-8 mb-2' />
                     <span>Brands</span>
                 </div>
-                <div onClick={() => setCategory(category.includes("free") ? category.replace("free", "") : category + " free")} className={`${category.includes("free") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 flex flex-col items-center lg:w-24 w-16 h-20`}>
+                <div onClick={() => setCategory(category.includes("free") ? category.replace("free", "") : category + " free")} className={`${category.includes("free") ? "border-b-blue-600 text-blue-500 border-b-4" : ""} hover:border-b-4 cursor-pointer hover:border-b-blue-600 hover:text-blue-700 duration-100 flex flex-col items-center lg:w-24 w-16 h-20`}>
                     <FaBolt className='h-8 w-8 mb-2' />
                     <span>Free</span>
                 </div>
