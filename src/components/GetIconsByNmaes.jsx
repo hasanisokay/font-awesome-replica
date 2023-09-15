@@ -3,8 +3,9 @@ import { FaHome, FaHourglass, FaInstagram, FaLinkedinIn, FaAirbnb, FaUserAlt, Fa
 import { MenuContext } from "../provider/Context";
 
 const GetIconByName = ({ name, fromModal }) => {
-  const { iconsDisplayMethod } = useContext(MenuContext);
-  const classes = `${fromModal && "w-72 h-72 p-12 rounded-lg border" || (iconsDisplayMethod === "list" && "w-4 h-4" || iconsDisplayMethod === "roomy" && "lg:w-10 lg:h-10 w-8 h-8" || iconsDisplayMethod === "compact" && "lg:w-8 lg:h-8 w-6 h-6")} `
+  
+  const { iconsDisplayMethod, animation, rotation} = useContext(MenuContext);
+  const classes = `${fromModal && ((rotation==="rotate-90" && "rotate-90") || (rotation==="rotate-180" && "rotate-180") || (rotation==="rotate-270" && "rotate-[270deg]") || (rotation==="rotate-360" && "rotate-360"))} ${fromModal && ((animation==="bounce" && "animate-bounce") || (animation==="spin" && "animate-spin") || (animation==="fade" && "animate-pulse") || (animation==="beat" && "animate-ping max-h-36 max-w-48"))} ${fromModal && "w-52 h-52 p-12  " || (iconsDisplayMethod === "list" && "w-4 h-4" || iconsDisplayMethod === "roomy" && "lg:w-10 lg:h-10 w-8 h-8" || iconsDisplayMethod === "compact" && "lg:w-8 lg:h-8 w-6 h-6")} `
   switch (name) {
     case "FaHome":
       return <FaHome className={classes} />;

@@ -11,8 +11,13 @@ const Context = ({ children }) => {
     const [filteredIcon, setFilteredIcon] = useState(iconsData);
     const [selectedStyle, setSelectedStyle] = useState("")
     const [showFilter, setShowFilter] = useState(false);
+    
+    // modal states starts
+    const [animation, setAnimation] = useState("");
+    const [rotation, setRotation] = useState("");
+    // modal states ends
     const menuInfo = {
-        sortMethod, setSortMethod, filteredIcon, setFilteredIcon, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod, clickedIcon, setClickedIcon, setSearchedText, searchedText, selectedStyle, setSelectedStyle, showFilter, setShowFilter,
+        sortMethod, setSortMethod, filteredIcon, setFilteredIcon, category, setCategory, iconsDisplayMethod, setIconsDisplayMethod, clickedIcon, setClickedIcon, setSearchedText, searchedText, selectedStyle, setSelectedStyle, showFilter, setShowFilter, animation, setAnimation, rotation, setRotation
     }
     return (
         <MenuContext.Provider value={menuInfo}>
