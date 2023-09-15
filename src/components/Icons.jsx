@@ -77,8 +77,8 @@ const Icons = () => {
                     <div className="flex items-center gap-10 mb-6">
                         {
                             (/[a-zA-Z]/g.test(category) || /[a-zA-Z]/g.test(category)) && <div className="flex">
-                                <div className="flex">{category.split(" ").map((icon, index) => /[a-zA-Z]/g.test(icon) && <div key={index} className="px-4 py-2 bg-white text-xs font-bold mx-2 rounded-full flex gap-4 items-center"> <span className="hover:text-blue-600">{icon.toUpperCase()}</span> <span onClick={() => setCategory(category.replace(icon, ""))} className="text-[10px] hover:text-red-600 cursor-pointer font-light ">x</span></div>)} </div>
-                                <button onClick={() => {setCategory(""); setCategory("")}} className="hover:text-blue-600 hover:border-blue-600 py-1 px-2 font-bold rounded-full text-xs border border-gray-500">RESET</button>
+                                <div className="flex flex-wrap lg:gap-1 gap-2 my-2 lg:my-0 lg:items-start items-center">{category.split(" ").map((icon, index) => /[a-zA-Z]/g.test(icon) && <div key={index} className="px-4 py-2 bg-white text-xs font-bold mx-2 rounded-full flex  gap-4 items-center"> <span className="hover:text-blue-600">{icon.toUpperCase()}</span> <span onClick={() => setCategory(category.replace(icon, ""))} className="text-[10px] hover:text-red-600 cursor-pointer font-light ">x</span></div>)} </div>
+                                <button onClick={() => {setCategory(""); setCategory("")}} className="hover:text-blue-600 hover:border-blue-600 py-1 px-2 font-bold rounded-full text-xs border border-gray-500 max-h-8 lg:max-h-[32px] lg:my-0 my-2">RESET</button>
                             </div>
                         }
                     </div>
