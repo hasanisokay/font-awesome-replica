@@ -28,7 +28,7 @@ const Categories = () => {
                     <span>Free</span>
                 </div>
             </div>
-            <div className='flex items-center gap-4 lg:flex-nowrap flex-wrap'>
+            <div className='flex items-center gap-4 lg:flex-nowrap justify-center lg:justify-normal flex-wrap'>
                 <div onClick={() => setShowFilter(!showFilter)} className={`text-blue-600 flex gap-2 items-center rounded-lg border-2 p-3 cursor-pointer lg:hidden`}>
                     <img src={filter} className={`w-4 h-4 ${showFilter ? 'transform rotate-180' : ''}`} alt="filter-icon" /> <p className='font-semibold'> {showFilter ? "Close" : "Show"} Filters</p>
                 </div>
